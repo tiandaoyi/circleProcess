@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="divport" content="width=device-width, initial-scale=1.0" />
+    <link href="./style.css" rel="stylesheet" type="text/css"  />
+    <script>
+    function getTransfromRotate(perCent) {
+      let leftRotate,rightRotate = 0;
+      if (perCent >= 50) {
+        // 百分比大于等于50
+        leftRotate = 0;
+        rightRotate = -(100 - perCent) * 2.7;
+      } else {
+        // 百分比小于50
+        rightRotate = -135;
+        leftRotate = -(51 - perCent) * 2.7 - 45;
+      }
+
+      return {
+        leftRotate,
+        rightRotate
+      }
+    }
+    window.onload = function() {
+      var leftDom = document.getElementById('left');
+      var rightDom = document.getElementById('right');
+      var fontDom = document.getElementById('font');
+      document.getElementById('input').addEventListener("input", function (e) {
+        var number = e.target.valueAsNumber;
+        if (number >= 0 && number <= 100) {
+          var {leftRotate,rightRotate} = getTransfromRotate(number);
+          if (leftDom) {
+            leftDom.style.transform = `rotate(${leftRotate}deg)`;
+          }
+          if (rightDom) {
+            rightDom.style.transform = `rotate(${rightRotate}deg)`;
+          }
+          if (fontDom) {
+            fontDom.innerText = `${number}%`;
+          }
+        }
+      });
+      
+    }
+
+  </script>
+  </head>
+  <body>
+    <div class="progress">
+      <div class="progress-rect">
+        <div class="progress-rect-bg"></div>
+        <div class="progress-rect-cover"></div>
+
+        <div class="progress-rect-center">
+          <div class="progress-rect-center-font">已抢</div>
+          <div class="progress-rect-center-font" id="font"></div>
+        </div>
+        <div class="progress-rect-left">
+          <div class="progress-rect-left-square" id="left" >
+          </div>
+        </div>
+        <div class="progress-rect-right">
+          <div class="progress-rect-right-square" id="right">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="input-box">
+      请输入您要设置的百分比
+      <input id="input" type="number"/>
+    </div>
+  </body>
+</html>

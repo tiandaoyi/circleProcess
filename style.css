@@ -1,0 +1,102 @@
+.progress {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  align-items: flex-end;
+}
+.progress-rect {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+.progress-rect-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 50%;
+  border: 8px solid rgba(23, 39, 145, 0.2);
+  background: transparent;
+  box-sizing: border-box;
+  border-bottom-color: transparent;
+}
+.progress-rect-cover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: -1px;
+  top: 2px;
+  left: 0;
+  right: 0;
+  border-radius: 50%;
+  border: 20px solid transparent;
+  border-bottom-color: white;
+  background: transparent;
+  box-sizing: border-box;
+  z-index: 1;
+}
+.progress-rect-center {
+  position: absolute;
+  top: 32px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: #172791;
+  font-size: 20px;
+  line-height: 20px;
+}
+.progress-rect-center-font {
+  text-align: center;
+  margin-bottom: 4px;
+}
+.progress-rect-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 100px;
+  overflow: hidden;
+}
+.progress-rect-left-square {
+  width: 84px;
+  height: 84px;
+  border: 8px solid transparent;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 8px solid #172791;
+  border-left: 8px solid #172791;
+}
+.progress-rect-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 100px;
+  overflow: hidden;
+}
+.progress-rect-right-square {
+  width: 84px;
+  height: 84px;
+  border: 8px solid transparent;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top: 8px solid #172791;
+  border-right: 8px solid #172791;
+}
+
+.input-box {
+  margin-top: 20px;
+  text-align: center;
+}
