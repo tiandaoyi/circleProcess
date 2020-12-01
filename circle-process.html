@@ -25,7 +25,7 @@
       var leftDom = document.getElementById('left');
       var rightDom = document.getElementById('right');
       var fontDom = document.getElementById('font');
-      document.getElementById('input').addEventListener("input", function (e) {
+      document.getElementById('input').addEventListener('input', function (e) {
         var number = e.target.valueAsNumber;
         if (number >= 0 && number <= 100) {
           var {leftRotate,rightRotate} = getTransfromRotate(number);
